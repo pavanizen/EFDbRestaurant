@@ -1,0 +1,24 @@
+﻿@model EFDbFirstApproachRestaurant.Models.RestTab
+@{
+    ViewBag.Title = "DeleteRes";
+}
+
+<h2>Delete Restaurant</h2>
+
+
+<form action="/Restaurant/DeleteRes/@Model.RestId" method="post">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="Restaurant Name">Restaurant Name:</label>
+            <input type="hidden" name="RestId" value="@Model.RestId" />
+            @Model.RestName
+        </div>
+        <div class="form-group col-md-6">
+            <label for="Cusinetype">Cusine Type:</label>
+            @Model.CusineType
+        </div>
+        
+    </div>
+    <button type="submit" class="btn btn-danger">Delete Restaurant</button>
+    <a class="btn btn-dark" href="/Restaurant/Index">Cancel</a>
+</form>

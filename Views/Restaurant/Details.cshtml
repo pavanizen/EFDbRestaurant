@@ -1,0 +1,25 @@
+﻿@model EFDbFirstApproachRestaurant.Models.RestTab
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details of Restaurant</h2>
+<table class="table">
+    <tr>
+        <th>Restaurant Id</th>
+        <td>@Model.RestId</td>
+    </tr>
+    <tr>
+        <th>Restaurant Name</th>
+        <td>@Model.RestName</td>
+    </tr>
+    <tr>
+        <th>Cusine Type</th>
+        <td>@Model.CusineType</td>
+    </tr>
+   
+    
+</table>
+<a href="/Restaurant/Index" class="btn btn-info">Back</a>
+
+

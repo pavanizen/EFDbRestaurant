@@ -1,0 +1,32 @@
+﻿@model IEnumerable<EFDbFirstApproachRestaurant.Models.RestTab>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Restaurant List</h2>
+<a href="/Restaurant/AddRest" class="btn btn-outline-primary">Add Restaurant</a>
+<br/>
+<form class="form-inline" action="/Restaurant/Index">
+    <label for="=" search>Search:</label>
+    <input type="text" class="form-control" id="search" name="search" placeholder="search" value="@ViewBag.Search"/>
+    <button type="submit" class="btn btn-primary">Go</button>
+</form>
+<br/>
+    <table class="table">
+        <thead>
+            <tr><th>Restaurant Name</th>
+            <th>Cusine Type</th></tr>
+        </thead>
+        @foreach(var item in Model)
+        {
+    <tr>
+        <td><a href="/Restaurant/Details/@item.RestId">@item.RestName</a></td>
+        <td>@item.CusineType</td>
+        <td><a href="/Restaurant/Details/@item.RestId">Details</a></td>
+        <td><a href="/Restaurant/UpdateRes/@item.RestId" class="btn btn-primary">Edit</a></td>
+        <td><a href="/Restaurant/DeleteRes/@item.RestId" class="btn btn-danger">Delete</a></td>
+    </tr>
+        }
+    </table>
+
+
